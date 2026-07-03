@@ -1,0 +1,309 @@
+:root {
+    --primary-color: #2c5530;
+    --secondary-color: #8b4513;
+    --accent-color: #ffd700;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --dark-bg: #1a1a2e;
+    --light-bg: #f8f9fa;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --malagasy-red: #c41e3a;
+    --malagasy-green: #2c5530;
+    --malagasy-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #16213e 100%);
+    color: var(--text-light);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Main Content */
+#app-content {
+    min-height: calc(100vh - 120px);
+    padding-top: 70px;
+    transition: all 0.3s ease;
+}
+
+/* Cards */
+.game-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.game-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Buttons */
+.btn-casino {
+    background: linear-gradient(45deg, var(--malagasy-green), #1a472a);
+    color: white;
+    border: 2px solid var(--accent-color);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-casino:hover {
+    background: linear-gradient(45deg, var(--accent-color), #ff8c00);
+    color: var(--dark-bg);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #app-content {
+        padding-top: 60px;
+    }
+    
+    .game-card {
+        margin-bottom: 20px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Scrollbar personnalisé */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--malagasy-green);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+/* Ajouts au CSS/main.css */
+
+/* Footer Styles */
+.footer-section {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-link {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-link:hover {
+    color: var(--accent-color) !important;
+    transform: translateX(5px);
+}
+
+.social-links a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    color: #fff !important;
+}
+
+/* Historique */
+.history-page .table {
+    font-size: 0.9rem;
+}
+
+.history-page .win-row:hover {
+    background: rgba(40, 167, 69, 0.2) !important;
+}
+
+.history-page .loss-row:hover {
+    background: rgba(220, 53, 69, 0.2) !important;
+}
+
+/* Profil */
+.profile-page .avatar-container {
+    position: relative;
+}
+
+.profile-page .avatar-container i {
+    transition: all 0.3s ease;
+}
+
+.profile-page .avatar-container i:hover {
+    transform: scale(1.1);
+}
+
+/* Animations pour les badges */
+@keyframes badgePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.badge-unlocked {
+    animation: badgePulse 0.5s ease-in-out;
+}
+
+/* Pagination */
+.pagination .page-link {
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background: var(--accent-color) !important;
+    color: var(--dark-bg) !important;
+    transform: translateY(-2px);
+}
+
+/* Cards améliorées */
+.card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-header {
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive tables */
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-section .text-md-end {
+        text-align: center !important;
+    }
+}
+
+/* Loading states */
+.loading-shimmer {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.05) 0%, 
+        rgba(255,255,255,0.1) 50%, 
+        rgba(255,255,255,0.05) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Toast personnalisé */
+.toast {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Modal amélioré */
+.modal-content {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Formulaires */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+}
+
+/* Badges personnalisés */
+.badge-custom {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Tooltips */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.tooltip .tooltip-inner {
+    background: var(--dark-bg);
+    border: 1px solid var(--accent-color);
+    color: var(--text-light);
+}
