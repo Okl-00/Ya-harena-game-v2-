@@ -1,0 +1,25 @@
+casino-app/
+├── index.html
+├── css/
+│   ├── main.css
+│   ├── auth.css
+│   ├── games.css
+│   └── chatbot.css
+├── js/
+│   ├── app.js
+│   ├── auth.js
+│   ├── games-manager.js
+│   ├── chatbot.js
+│   ├── storage.js
+│   └── utils.js
+├── components/
+│   ├── header.js
+│   ├── footer.js
+│   ├── popup.js
+│   └── navigation.js
+└── pages/
+    ├── home.html
+    ├── games.html
+    ├── history.html
+    ├── profile.html
+    └── malagasy-culture.html
